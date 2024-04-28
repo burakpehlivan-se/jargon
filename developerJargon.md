@@ -250,7 +250,7 @@ Bir değişken tipinin eşitliğin sağ tarafındaki değere bakarak belirlenmes
 Eğer sayısal değerler için verilen değer integer değer aralığının (-2^31 , +2^31) içinde ise type inference integer değeri atar.
 aralığın dışında ise long veri tipi belirlenir.
 
-# explicit type conversion - inplicit type conversion
+## explicit type conversion - inplicit type conversion
 explicit type conversion örtülü bir şekilde tip dönüşümü yapmaktır.
 ```
 // Java
