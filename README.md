@@ -209,10 +209,6 @@ print(topla(5,4,8))  # topla fonksiyonu üç parametre aldığı için 2. topla 
 ### operatör overload
 Operatör aşırı yüklemesi, bir operatörün (+, -, *, /, %) ve operatör fonksiyonunun (plus, minus, times, div, rem) farklı veri türleri için farklı anlamlar ve davranışlar tanımlamanıza olanak tanıyan bir özelliktir.
 
-
-
-
-
 ## IDE
 IDE (Integrated Development Environment) Tümleşik Geliştirme Ortamı olarak türkçeye çevrilebilir.
 IDE'lerin bazı temel özellikleri şunlardır:
@@ -226,7 +222,6 @@ IDE'lerin bazı temel özellikleri şunlardır:
 - **Dokümantasyon Araçları:** Yazdığınız kod için otomatik olarak dokümantasyon oluşturmanıza yardımcı olabilir.
 
 ## SSH
-
 **SSH**, açılımı **Secure Shell** olan, ağ hizmetlerini güvenli olmayan bir ağ üzerinden güvenli bir şekilde çalıştırmak için kullanılan bir **kriptografik ağ protokolüdür**. En bilinen kullanım alanı bilgisayar sistemlerine **uzaktan oturum açmak** içindir.
 
 **SSH'nin Faydaları:**
@@ -259,6 +254,8 @@ Umarım bu bilgiler SSH hakkında genel bir fikir vermiştir.
 
  
 ## Technical Debt
+Technical Debt (teknik borç) "koddaki çalışan bir yeri herhangi bir açıdan daha iyi(daha optimize, daha hızlı vb.) yazabilirim ama birtakım koşullar buna izin vermiyor" durumudur.
+Bu birtakım koşullar zaman yetmemesi, kaynak yetmemesi gibi her türlü koşul olabileceği gibi bazı durumlarda bilinçli olarak da teknik borç bırakılabilir.
  
 ## Code Smell
 Yazılan koda bakıldığında daha iyisini de yazabileceğinin düşünülmesi durumudur.
@@ -267,11 +264,39 @@ tekrarlanan kod satırlarıyla karşılaşılması gibi durumlarda code smell du
 ## Shadow Naming
 shadow naming genellikle bir değişken, sınıf, veya fonksiyon isminin başka bir değişken, sınıf, veya fonksiyon ismiyle örtüşmesi durumunu ifade eder.
 Bu örtüşme genellikle aynı kapsam içinde (örneğin, aynı blokta, aynı sınıfta) gerçekleşir. Örtüşen isimler birbirlerini gizler (gölgelendirir) ve bu durum programın beklenmedik davranışlarına sebep olabilir.
+
 ## JVM Diller
+JVM diller Java,Kotlin, Scala ve Groovy dilleridir. Bu dillerde yazılan kodlar çalıştırıldığında [IDE](#ide) tarafondan byte code denilen bir dile çevrilir. Byte code'a çevrildikten sonra JVM (Java Virtual Machine) dediğimiz ve byte code'u bilgisayarın anlayacağı "bilgisayar diline" dönüştüren sistem çalışır. Yani yazdığımız kod direkt olarak bilgisayar diline dönüşmez (C, C++ gibi low level dillerde yazılan kod direkt bilgisayar koduna dönüşür.) ara bir işlemden (byte code'a dönüştürme) geçer.
+Örnek vermek gerekirse; Java'da kullanıcıdan sayı isteyip sayının karesinin 20 katını alan bir kod yazdığınızı düşünün. IDE kodu ilk başta byte code'a çevirir. Byte code JVM tarafından okunur ve makine diline dönüştürülür. Aynı amaçta bir Kotlin kodu yazdığımızda da ilk başta byte code'a çevrilir ve bu byte code ilk olarak yazdığımız java kodunun byte code'u ile aynıdır. Byte code'una bakılarak JVM diller birbirine çevrilebilir. Bu durum diller arasında esneklik yaratır. 
 
 ## Stand Alone Fonksiyonlar
+Stand alone fonksiyonlar, herhangi bir uygulamaya veya kütüphaneye bağlı olmadan çalışabilen fonksiyonlardır.
+
+```
+# Python
+
+def hesapla_kare(x):
+  """
+  Bir sayının karesini hesaplar.
+
+  Args:
+      x: Karesi hesaplanacak sayı.
+
+  Returns:
+      x'in karesi.
+  """
+  return x * x
+
+# Fonksiyonu kullanma
+sayi = 5
+kare = hesapla_kare(sayi)
+print(f"{sayi} sayısının karesi: {kare}")
+
+```
 
 ## Native - Cross Platform Development
+Native development (yerel uygulama geliştirme), programın belirli bir cihazın işletim sistemi için özel olarak geliştirildiği bir yaklaşımı ifade eder.
+Cross-platform development (Çapraz platform geliştirme), tek bir kod kaynağı kullanılarak farklı platformlarda çalışabilen mobil uygulamalar geliştirme yaklaşımıdır.
 
 ## Best Practise
 
