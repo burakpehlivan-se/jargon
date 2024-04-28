@@ -1,4 +1,54 @@
 Bu repoda sizlere geliştiricilerin kullandığı ve yazılım ekosistemine ait kavramları açıklıyorum. Repo sürekli güncellenecektir.
+# İçindekiler: 
+   * [Git](#git)
+   * [Bug](#bug)
+   * [Debug](#debug)
+   * [Syntax](#syntax)
+   * [Parametre](#parametre)
+   * [Cache](#cache)
+   * [Overload](#overload)
+   * [IDE](#ide)
+   * [SSH](#ssh)
+   * [Technical Debt](#technical-debt)
+   * [Code Smell](#code-smell)
+   * [Shadow Naming](#shadow-naming)
+   * [JVM Diller](#jvm-diller)
+   * [Stand Alone Fonksiyonlar](#stand-alone-fonksiyonlar)
+   * [Native - Cross Platform Development](#native---cross-platform-development)
+   * [Best Practise](#best-practise)
+   * [Paralel Programlama](#paralel-programlama)
+   * [Client - Client Development](#client---client-development)
+   * [Backend ](#backend)
+   * [Frontend](#frontend)
+   * [Immutable - Mutable Variables](#immutable---mutable-variables)
+   * [Explicit - Inplicit](#explicit---inplicit)
+   * [Type Inference](#type-inference)
+   * [Type Conversion](#type-conversion)
+   * [Explicit Type Conversion - Inplicit Type Conversion](#explicit-type-conversion---inplicit-type-conversion)
+   * [Pimitif tip, referans tip ve Nullable](#pimitif-tip-referans-tip-ve-nullable)
+   * [Boxed Unboxed Veri Tutma](#boxed-unboxed-veri-tutma)
+   * [Unsigned Tipler](#unsigned-tipler)
+   * [Smart Casting](#smart-casting)
+   * [Crash](#crash)
+   * [Dummy Data](#dummy-data)
+   * [Deadlock Problem](#deadlock-problem)
+   * [Edge Case](#edge-case)
+   * [Bottlenack](#bottlenack)
+   * [Pitfall](#pitfall)
+   * [Defansive Programming](#defansive-programming)
+   * [Deprecated](#deprecated)
+   * [Garbage Collector](#garbage-collector)
+   * [Row String](#row-string)
+   * [Extention Function](#extention-function)
+   * [Infix Function](#infix-function)
+   * [API (Application Program interface)](#api-application-program-interface)
+   * [Indent](#indent)
+   * [Scrum Metodolojisi](#scrum-metodolojisi)
+   * [Sprint](#sprint)
+   * [Product Increment](#product-increment)
+   * [Product Backlog](#product-backlog)
+   * [Grooming Meeting](#grooming-meeting)
+
 ## Git
 Git, yazılım geliştirme alanında kullanılan bir **versiyon kontrol sistemi** (VCS) aracıdır.
 Yazılım projelerindeki kodların geçmiş sürümlerini takip etme, değişiklikleri izleme ve
@@ -19,7 +69,7 @@ gerektiğinde eski sürümlere geri dönme imkanı sağlar.
 - **Hata Düzeltme:**  Git, hataları kolayca bulup düzeltme imkanı sağlar. Yanlış bir commit'ı geri almak mümkündür.
 - **Versiyon Kontrolü:**  Farklı versiyonlarda kod stabilitesini korumaya yardımcı olur.
 
-## Bug (Hata)
+## Bug
 Bir yazılımdaki hata veya kusurdur.
 Bu hatalar, yazılımın işlevini bozabilir veya beklenmedik davranışlara yol açabilir.
 Bug Çeşitleri:
@@ -28,8 +78,8 @@ Bug Çeşitleri:
 - **Runtime error** (Çalışma zamanı hatası): Program çalışırken oluşan hatalardır. Örneğin, programın erişmeye çalıştığı bir bellek alanı yoksa veya bir sayısal işlem hata ile karşılaşırsa çalışma zamanı hatası oluşabilir.
 
 
-## Debug (Hata Ayıklama)
-Kodda bulunan hataları düzeltmek için yapılan işleme debug denir.  
+## Debug
+Kodda bulunan hataları düzeltmek için yapılan işleme debug (Hata Ayıklama) denir.  
 Debugging sürecinin genel adımları:
 
 1. **Hatanın belirlenmesi:** Programın beklenen şekilde çalışmadığını fark edersiniz. Hata mesajları varsa bunları inceleyin. 
@@ -39,8 +89,8 @@ Debugging sürecinin genel adımları:
 5. **Kodun test edilmesi:** Programı tekrar test edin ve hatanın giderilip giderilmediğini kontrol edin. Gerekirse debugging döngüsüne geri dönün.
 
 
-## Syntax (Söz Dizimi)
-Syntax, bir programlama dilinin nasıl yazılması gerektiğini ve dilin nasıl yorumlanacağını belirleyen kurallarını ifade eder.
+## Syntax
+Syntax (Söz Dizimi), bir programlama dilinin nasıl yazılması gerektiğini ve dilin nasıl yorumlanacağını belirleyen kurallarını ifade eder.
 Tıpkı bir dilde cümlelerin kurallarla oluşturulması gibi, programlamada da kodlar belirli syntax kurallarına göre yazılır.
 Farklı programlama dillerinin farklı syntaxları vardır. Örneğin:
 
@@ -114,23 +164,23 @@ Eğer veri cache'de bulunuyorsa, hızlı bir şekilde cache'den okunur.
 Eğer veri cache'de yoksa, o zaman yavaş olan ana bellekten (örneğin sabit disk) okunur ve aynı zamanda cache'e de kopyalanır.
 Böylece, bir daha aynı veriye ihtiyaç duyulduğunda, daha hızlı bir şekilde cache'den erişilebilir.
 
-### Cache'in faydaları:
+### Cache'in Faydaları:
 - Hızlı performans: Cache, sıklıkla erişilen verileri depolayarak, bu verilerin daha hızlı bir şekilde okunmasını sağlar. Bu nedenle, özellikle web sayfaları, uygulamalar ve işletim sistemleri gibi sıklıkla aynı verilere erişen sistemlerde performans artışı sağlar.
 - Azaltılmış veri transferi: Cache, sıklıkla erişilen verileri depolayarak, bu verilerin ana bellekten (örneğin sabit disk) tekrar tekrar okunması ihtiyacını azaltır. Bu, özellikle veri transferi bant genişliği sınırlı olan durumlarda faydalıdır.
-### Cache çeşitleri:
+### Cache Çeşitleri:
 
 - **CPU cache:** İşlemcinin içinde yer alan ve işlemci tarafından sıklıkla erişilen verileri depolamak için kullanılır.
 - **Disk cache:** Sabit disk sürücüsünde yer alan ve sıklıkla erişilen disk bloklarını depolamak için kullanılır.
 - **Web cache:** Web tarayıcılar ve web sunucularında bulunan cache'ler, sıklıkla ziyaret edilen web sayfalarının öğelerini (örneğin resimler, script dosyaları) depolamak için kullanılır.
 
-### Cache'in dezavantajları:
+### Cache'in Dezavantajları:
 
 - **Cache tutarsızlığı:** Veri hem cache'de hem de ana bellekte tutuluyorsa, bunların senkron tutulması gerekir. Aksi takdirde, okunan veri güncel olmayabilir.
 - **Cache boyutu:** Cache sınırlı bir boyuta sahiptir. Bu nedenle, hangi verilerin cache'de tutulacağı konusunda strateji belirlemek gerekir.
 
 Genel olarak, cache'in avantajları dezavantajlarından daha ağır basar. Cache kullanımı, bilgisayar sistemlerinin performansını önemli ölçüde artırır.
 
-## Overload (Aşırı Yükleme)
+## Overload
 Overload (Aşırı Yükleme) birden fazla fonksiyonun veya operatörün aynı adla ancak farklı parametreler veya
 farklı geri dönüş değerleri ile tanımlanmasına izin veren bir özelliktir.
 Bu özellik, kodun daha okunabilir, anlaşılır ve esnek olmasını sağlar.
@@ -163,8 +213,8 @@ Operatör aşırı yüklemesi, bir operatörün (+, -, *, /, %) ve operatör fon
 
 
 
-## IDE (Integrated Development Environment)
-IDE Tümleşik Geliştirme Ortamı olarak türkçeye çevrilebilir.
+## IDE
+IDE (Integrated Development Environment) Tümleşik Geliştirme Ortamı olarak türkçeye çevrilebilir.
 IDE'lerin bazı temel özellikleri şunlardır:
 
 - **Kod editörü:** Kod yazmak ve düzenlemek için kullanılan metin editörüdür. [Syntax](#syntax-s-z-dizimi) highlighting (kod vurgulama), otomatik tamamlama ve kod katlama gibi özellikleri sayesinde kod yazmayı kolaylaştırır.
@@ -208,28 +258,26 @@ Umarım bu bilgiler SSH hakkında genel bir fikir vermiştir.
 **SSH hakkında daha fazla bilgi edinmek isterseniz, lütfen aşağıdaki kaynaklara bakın:**
 
  
-## command line (tekli çoklu dokümantasyon)
-Her fonksiyona yazılmaz karmaşık olabilecek fonksiyonlara eklemek daha doğru olur
-## technical debt (teknik borç)
+## Technical Debt
  
-## code smell
+## Code Smell
 Yazılan koda bakıldığında daha iyisini de yazabileceğinin düşünülmesi durumudur.
 tekrarlanan kod satırlarıyla karşılaşılması gibi durumlarda code smell durumu olabilir.
 
-## Shadow naming
+## Shadow Naming
 shadow naming genellikle bir değişken, sınıf, veya fonksiyon isminin başka bir değişken, sınıf, veya fonksiyon ismiyle örtüşmesi durumunu ifade eder.
 Bu örtüşme genellikle aynı kapsam içinde (örneğin, aynı blokta, aynı sınıfta) gerçekleşir. Örtüşen isimler birbirlerini gizler (gölgelendirir) ve bu durum programın beklenmedik davranışlarına sebep olabilir.
-## JVM DİLLLER
+## JVM Diller
 
 ## Stand Alone Fonksiyonlar
 
-## Native - Cross Platform uygulama geliştirme 
+## Native - Cross Platform Development
 
 ## Best Practise
 
 ## Paralel Programlama
 
-## Clint - clint development
+## Client - Client Development
 
 ## Backend 
 Backend, bir web sitesinin veya uygulamanın kullanıcı arayüzünden (front-end) ayrı olan ve sunucuda çalışan kısmıdır.
@@ -241,16 +289,19 @@ Frontend, bir web sitesinin veya uygulamanın kullanıcının gördüğü ve dir
 Frontend genelde HTML (Programlama dili değil işaretleme dilidir), CSS ve JavaScript ile yazılır. Ek olarak Figma, Sketch gibi
 IU/UX tasarım araçları da kullanılır.
 
-## immutable mutable variable
+## Immutable - Mutable Variables
 
-## explicit inplicit
+## Explicit - Inplicit
 
-## Type inference (Tip Çıkarımı)
+## Type Inference
 Bir değişken tipinin eşitliğin sağ tarafındaki değere bakarak belirlenmesi işlemine type inference denir.
 Eğer sayısal değerler için verilen değer integer değer aralığının (-2^31 , +2^31) içinde ise type inference integer değeri atar.
 aralığın dışında ise long veri tipi belirlenir.
 
-# explicit type conversion - inplicit type conversion
+# Type Conversion
+
+
+# Explicit Type Conversion - Inplicit Type Conversion
 explicit type conversion örtülü bir şekilde tip dönüşümü yapmaktır.
 ```
 // Java
@@ -281,19 +332,19 @@ inplicit type conversion
 
 
 
-## Type Conversion
 
-## primitive değişken, referans değşken ve nullable
 
-## Boxed Unboxed veri tutma yöntemleri
+## Pimitif tip, referans tip ve Nullable
 
-## unsigned değişken tipleri
+## Boxed Unboxed Veri Tutma
 
-## smart casting
+## Unsigned Tipler
 
-## crash
+## Smart Casting
 
-## Dummy data
+## Crash
+
+## Dummy Data
 
 ## Deadlock Problem
 iki veya daha fazla işlemin karşılıklı olarak birbirlerinin kilitlediği kaynaklara erişmek istemesiyle oluşur.
@@ -301,27 +352,27 @@ Her iki işlem de sürekli birbirlerini beklediği için sistem kaynakları olum
 
 ## Edge Case
 
-## bottlenack
+## Bottlenack
 
-## pitfall
+## Pitfall
 
-## defansive programming
+## Defansive Programming
 
 ## Deprecated
 
 ## Garbage Collector
 
-## row string
+## Row String
 
-## extention function
+## Extention Function
 
-## infix function
+## Infix Function
 
 ## API (Application Program interface)
 Uygulama Programlama Araüyüz demektir. Farklı yazılımların birbirleriyle iletişim kurmasına
 ve bilgi paylaşmasına olanak tanıyan bir dizi kural ve tanımlamadır.
 
-## İndent
+## Indent
 Kodda satırın solunun sayfanın sonuna uzaklığını ifade eden terimdir. Genelde 1 tab (4 boşluk) indent verilir.
 ```
 for (int=5 ; i<=100; i++){
@@ -351,7 +402,7 @@ Sprintlerin temel özellikleri:
 - **Takımdır:** Sprint'ler boyunca Scrum ekibi birlikte çalışır. Her gün kısa bir scrum toplantısı yapılarak sprintin durumu değerlendirilir ve sorunlar çözülür.
 - **Teslim odaklıdır:** Sprint sonunda, potansiyel olarak kullanılabilir bir ürün artımenti (product increment) ortaya çıkarılmalıdır. Bu artıment, sprint boyunca tamamlanan işlerin çalışır bir parçasıdır.
 
-## product increment(ürün artımenti)
+## Product Increment
 Bir sprint süresince tamamlanan ve kullanılabilir potansiyeli olan bir ürün parçasıdır.
 Product increment'in temel özellikleri:
 
