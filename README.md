@@ -217,9 +217,9 @@ Operatör aşırı yüklemesi, bir operatörün (+, -, *, /, %) ve operatör fon
 IDE (Integrated Development Environment) Tümleşik Geliştirme Ortamı olarak türkçeye çevrilebilir.
 IDE'lerin bazı temel özellikleri şunlardır:
 
-- **Kod editörü:** Kod yazmak ve düzenlemek için kullanılan metin editörüdür. [Syntax](#syntax-s-z-dizimi) highlighting (kod vurgulama), otomatik tamamlama ve kod katlama gibi özellikleri sayesinde kod yazmayı kolaylaştırır.
+- **Kod editörü:** Kod yazmak ve düzenlemek için kullanılan metin editörüdür. [Syntax](#syntax) highlighting (kod vurgulama), otomatik tamamlama ve kod katlama gibi özellikleri sayesinde kod yazmayı kolaylaştırır.
 - **Derleyici veya Yorumlayıcı:** Yazdığınız kodu çalıştırılabilir bir programa dönüştürür.
-- **Debugger (Hata Ayıklama Aracı):** Kodunuzda [bug](#bug-hata) olup olmadığını bulmanıza ve [debugging](#debug-hata-ay-klama) yardımcı olur. Değişkenlerin değerlerini izleyebilir, programın adım adım nasıl çalıştığını görebilirsiniz.
+- **Debugger (Hata Ayıklama Aracı):** Kodunuzda [Bug](#bug) olup olmadığını bulmanıza ve [debugging](#debug) yardımcı olur. Değişkenlerin değerlerini izleyebilir, programın adım adım nasıl çalıştığını görebilirsiniz.
 - 
 - **Kod Tamamlama:** Kod yazarken yazmaya başladığınız kelimeleri otomatik olarak tamamlama veya önerme özelliklerini içerir.
 - **Sürüm Kontrol Sistemi Entegrasyonu:** Git veya SVN gibi sürüm kontrol sistemleriyle entegre olarak çalışır. Bu sayede kodunuzun geçmiş sürümlerine erişebilir ve değişiklikleri takip edebilirsiniz.
