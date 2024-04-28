@@ -368,6 +368,51 @@ Her iki işlem de sürekli birbirlerini beklediği için sistem kaynakları olum
 
 ## Infix Function
 
+Infix fonksiyonlar, bazı programlama dillerinde, belirli operatörlerle ilgili kodları daha okunabilir ve sezgisel hale getirmek için tasarlanmış özel bir fonksiyon türüdür.
+
+**Infix fonksiyonlar nasıl çalışır:**
+
+* Bir infix fonksiyon, dönüş türünden önce `infix` anahtar kelimesiyle tanımlanır.
+* Fonksiyonun yalnızca bir parametresi olabilir.
+* Fonksiyon adı, fonksiyon çağrılırken operantlar(+, -, *, / gibi) arasında yerleştirilir.
+
+Örneğin, Kotlin'de artı işareti (+), toplama ve dize birleştirme için kullanılabilen aşırı yüklenmiş bir operatördür. Normalde ekleme için şöyle kullanılır:
+
+```kotlin
+val number1 = 5
+val number2 = 10
+val sum = number1 + number2
+
+println(sum) // Çıktı: 15
+```
+
+Infix fonksiyonlarla bu kodu daha doğal bir dil ifadesine benzeyecek şekilde yeniden yazabiliriz:
+
+```kotlin
+fun sum(a: Int, b: Int) = a + b
+
+val number1 = 5
+val number2 = 10
+val sum = number1 sum number2
+
+println(sum) // Çıktı: 15
+```
+
+Bu örnekte, `sum` fonksiyonu bir infix fonksiyon olarak tanımlanır. Fonksiyon adı `sum`'un operantlar `number1` ve `number2` arasında nasıl yerleştirildiğine dikkat edin. Bu, kodu daha okunabilir hale getirir ve matematiksel bir denklemi andırır.
+
+**Infix fonksiyonlar kullanmanın faydaları:**
+
+* **Geliştirilmiş okunabilirlik:** Infix fonksiyonlar, operatörlerle ilgili kodları, özellikle matematiksel işlemler veya doğal dili taklit eden işlemler için daha okunabilir ve anlaşılır hale getirebilir.
+* **Tutarlılık:** Infix fonksiyonlar, aşırı yüklenmiş operatörlerle uğraşırken kod tabanınızda tutarlılığı korumaya yardımcı olabilir.
+
+**Infix fonksiyonlar kullanırken dikkat edilmesi gerekenler:**
+
+* Infix fonksiyonlar, aşırı kullanıldığında veya karmaşık ifadelerde kullanıldığında kodun daha az okunabilir hale gelmesine neden olabilir.
+* Infix fonksiyonlar tüm operatörler için uygun olmayabilir.
+
+Genel olarak, infix fonksiyonlar, belirli durumlarda kod okunabilirliğini ve sürdürülebilirliğini geliştirmek için güçlü bir araç olabilir. Ancak, bunları bilinçli bir şekilde kullanmak ve belirli bir bağlamda gerçekten netlik sağlayıp sağlamadıklarını göz önünde bulundurmak önemlidir.
+
+
 ## API (Application Program interface)
 Uygulama Programlama Araüyüz demektir. Farklı yazılımların birbirleriyle iletişim kurmasına
 ve bilgi paylaşmasına olanak tanıyan bir dizi kural ve tanımlamadır.
