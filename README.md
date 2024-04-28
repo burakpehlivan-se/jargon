@@ -17,7 +17,7 @@ Bu repoda sizlere geliştiricilerin kullandığı ve yazılım ekosistemine ait 
    * [Native - Cross Platform Development](#native---cross-platform-development)
    * [Best Practise](#best-practise)
    * [Paralel Programlama](#paralel-programlama)
-   * [Client - Client Development](#client---client-development)
+   * [Client - Client Side Development](#client---client-side-development)
    * [Backend ](#backend)
    * [Frontend](#frontend)
    * [Immutable - Mutable Variables](#immutable---mutable-variables)
@@ -299,10 +299,52 @@ Native development (yerel uygulama geliştirme), programın belirli bir cihazın
 Cross-platform development (Çapraz platform geliştirme), tek bir kod kaynağı kullanılarak farklı platformlarda çalışabilen mobil uygulamalar geliştirme yaklaşımıdır.
 
 ## Best Practise
+Bir işi yapmak için çeşitli yöntemler olabilir. "Best practice" ise bu yöntemler arasından genel olarak kabul görmüş en etkili ve verimli olan yöntemi ifade eder.
+Yazılım geliştirmede best practice, yazılımı daha etkili, güvenilir, okunabilir, sürdürülebilir ve bakımı kolay hale getirmek için benimsenilen bir dizi yöntem ve ilke anlamına gelir.
+Yazılım geliştirmede bazı önemli best practice'ler şunlardır:
+Kod okunabilirliği, Modülerlik (kodun fonksiyonlara ayrılabilirliği), Kod tekrarından kaçınma, Hata yönetimi, Birim testleri, Sürüm kontrolü, Belgeleme.
 
 ## Paralel Programlama
+Paralel programlama, birden fazla işlemci veya hesaplama kaynağını kullanarak bir problemi daha hızlı çözmek için tasarlanmış bir programlama yöntemidir.
+Bir işi yapan iş birimleri arttıkça iş daha hızlı biter. Örnek vermek gerekirse bir görevi işlemcinin 1 çekirdeğinin %60 ının yapması ile işin iki çekirdeğe ayrılıp %30 %30 olarak iki çekirdeğe ayrılması arasında performans açısından iyileşme vardır.
 
-## Client - Client Development
+## Client - Client Side Development
+Client kavramı ağdaki bir sunucuya bağlanarak hizmet almayı ifade eder. Client cihazlar bilgisayar, mobil cihaz, yazılım vb olabilirler.
+Clientler sunucuya istekte bulunur (login bilgilerini sunucuya göndermek), sunucudan gelen verileri işler (sunucudan gelen yanıta göre sonraki ekrana geçmek ya da bilgileri tekrar sormak) ve gönderilebilecek yeni istekler için sunucu ile iletişim halinde bulunurlar.
+### Client Side Development yaklaşımları:
+**1. Sunucu-İstemci Veri İletişimi:**
+
+Bu yaklaşımda, client-side program sunucudan veri alır, bu veriyi işler ve kullanıcının tarayıcısında görüntüler.
+bu yaklaşımda sunucu sadece veri sağlar ve işleme client-side programda gerçekleşir. 
+
+* **Örnekler:**
+    * **Haber siteleri:** Sunucuda saklanan haber verilerini alıp, tarayıcıda dinamik bir şekilde listeleyen web siteleri.
+    * **E-ticaret siteleri:** Ürün bilgilerini sunucudan alıp, kullanıcıların tarayıcılarında ürün sayfaları oluşturan siteler.
+
+**2. Sunucu Tarafı İşleme ve Geri Dönüş:**
+
+Bu yaklaşımda, client-side program sunucuya veri gönderir, sunucu verileri işler ve sonucu client-side programa geri gönderir. Client-side program bu sonucu kullanarak sayfayı günceller veya kullanıcıya sunar.
+
+* **Örnekler:**
+    * **Kullanıcı oturum açma formları:** Giriş bilgilerini sunucuya gönderen ve sunucudan doğrulama sonucunu alan web formları.
+    * **Anket sistemleri:** Kullanıcıların anket yanıtlarını sunucuya gönderen ve sunucudan anket sonuçlarını gösteren web uygulamaları.
+
+**Her iki yaklaşımda da client-side program, sunucudan veri alır ve kullanıcının tarayıcısında işler.** 
+
+ **Sunucu tarafı işleme ve geri dönüşte**, 
+
+**Hangi yaklaşımın kullanılacağı, projenin gereksinimlerine bağlıdır.** 
+
+* **Sunucu-istemci veri iletişimi**, basit veri görüntüleme ve güncelleme işlemleri için uygun olabilir.
+* **Sunucu tarafı işleme ve geri dönüş**, daha karmaşık veri işleme, doğrulama ve güvenlik gibi işlemler için daha uygundur.
+
+**Önemli not:** Client-side programlar, sunucudan veri alırken **her zaman güvenlik önlemleri almalıdır.** 
+
+* Sunucu tarafında veri doğrulama ve kimlik doğrulama gibi mekanizmalar kullanılmalıdır.
+* Veriler, güvenli bir şekilde (örneğin HTTPS) iletilmelidir.
+* Kullanıcı girişi, XSS (Cross-Site Scripting) gibi saldırılara karşı korunmalıdır.
+ 
+
 
 ## Backend 
 Backend, bir web sitesinin veya uygulamanın kullanıcı arayüzünden (front-end) ayrı olan ve sunucuda çalışan kısmıdır.
